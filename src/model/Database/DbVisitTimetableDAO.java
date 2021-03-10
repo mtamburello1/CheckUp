@@ -21,7 +21,7 @@ import model.Dao.VisitTimetableDAO;
 public class DbVisitTimetableDAO implements VisitTimetableDAO {
 
 	/** Query for new booking. */
-	private static final String SelectDoctorAndTimetableSQL = "SELECT fiscal_code, user_name, surname, email, timetable_code, hour_visit, date_visit, duration, availability FROM user JOIN visitTimetable ON fiscal_code=doctor WHERE specialization = ? AND type_user='doctor'";
+	private static final String SelectDoctorAndTimetableSQL = "SELECT fiscal_code, user_name, surname, email, timetable_code, hour_visit, date_visit, duration, availability FROM user JOIN visitTimetable ON fiscal_code=doctor WHERE specialization = ? AND date_visit > ? AND type_user='doctor'";
 	/** Query to get a visit timetable. */
 	private static final String ReturnVisitTimetableByKeySQL = "SELECT * FROM (visitTimetable NATURAL JOIN user) WHERE timetable_code = ?";
 	/** Query for update visit timetable. */
@@ -41,10 +41,12 @@ public class DbVisitTimetableDAO implements VisitTimetableDAO {
 		PreparedStatement preparedStatement = null;
 		ResultSet result = null;
 		if(specialization != null) {
+			java.sql.Date today = this.todayDate();
 			try {
 				con = DbConnection.getConnection();       
 				preparedStatement = con.prepareStatement(SelectDoctorAndTimetableSQL);
 				preparedStatement.setString(1, specialization);
+				preparedStatement.setDate(2, today);
 				preparedStatement.execute();
 				result = preparedStatement.getResultSet();
 				while (result.next()) {
@@ -70,6 +72,10 @@ public class DbVisitTimetableDAO implements VisitTimetableDAO {
 		return null;
 	}
 
+	/**  @param doctors the array to search for
+	 *   @param doc the doctors to seek
+	 *   @return the position of a doctor in an array. -1 if not present.
+	 */
 	private int exists(ArrayList<DoctorBean> doctors, DoctorBean doc) {
 		int i = 0;
 		while(i<doctors.size()) {
@@ -79,6 +85,17 @@ public class DbVisitTimetableDAO implements VisitTimetableDAO {
 			i++;
 		}
 		return -1;
+	}
+	
+	/**
+	 * @return date of today
+	 */
+	private java.sql.Date todayDate() {
+		java.util.Date today = new java.util.Date(); 
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String date = sdf.format(today);
+		java.sql.Date d = StringConverter.dateStringToDate(date);
+		return d;
 	}
 
 	/**
