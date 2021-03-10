@@ -1,0 +1,45 @@
+/*
+	This file contains the style for the HomepageIcon.jsp page.
+
+*/
+@charset "UTF-8";
+
+.col-lg-4 {
+	text-align: center;
+	border: 1px solid white;
+	height: 100px;
+	float: left;
+	display: table;
+}
+
+.col-lg-4 a {
+	color: white;
+	font-size: 15px;
+	line-height: 100px;
+	display: table-cell;
+	line-height: 100px;
+}
+
+.col-lg-4 a:hover {
+	color: darkblue;
+	text-decoration: none;
+}
+
+#row {
+	width: 100%;
+	height: auto;
+	margin: 40px 0;
+	background-color: darkcyan;
+}
+
+@media ( min-width : 797px) {
+	.col-lg-4 a {
+		font-size: 20px;
+	}
+}
+
+@media ( max-width : 767px) {
+	.col-lg-4 {
+		height: 60px;
+	}
+}

@@ -1,0 +1,188 @@
+/*
+	This file contains the style for the Login.jsp page.
+
+*/
+@charset "UTF-8";
+
+#container-fluid {
+	min-height: 600px;
+	width: 100%;
+}
+
+#container-fluid .row {
+	height: 100%;
+}
+
+#container-fluid .col-md-4 {
+	background-color: rgba(0, 139, 139, 0.8);
+	padding: 40px;
+	padding-top: 0;
+	height: 100%;
+	margin: 10% auto;
+	width: 90%;
+	border-radius: 10px;
+	color: white;
+	flex: none;
+	max-width: none;
+}
+
+form {
+	width: 100%;
+	margin-top: 20px;
+}
+
+#employeeForm {
+	display: none;
+}
+
+#changeForm {
+	margin: 0;
+	display: inline-block;
+	width: 50%;
+	padding: 8px;
+	background-color: rgba(255, 255, 255, 255);
+	color: darkcyan;
+	position: relative;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	top: -80px;
+	left: 178px;
+	cursor: pointer;
+}
+
+#changeFormPatient {
+	display: inline-block;
+	width: 50%;
+	position: relative;
+	top: -40px;
+	left: -25px;
+	background-color: rgba(0, 137, 137, 0.8);
+	color: white;
+	padding: 8px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin: 0;
+	cursor: pointer;
+}
+
+input[type=submit] {
+	background-color: white;
+	border: 1px solid darkblue;
+	color: darkblue;
+	font-weight: 500;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+input[type=text], input[type=password] {
+	width: 80%;
+	font-size: 16px;
+}
+
+form a {
+	color: darkblue;
+}
+
+form a:hover {
+	color: darkblue;
+}
+
+@media ( min-width : 1200px) {
+	#container-fluid .col-md-4 {
+		width: 33%;
+	}
+	input[type=text], input[type=password] {
+		width: 60%;
+		font-size: 18px;
+	}
+}
+
+@media ( min-width :862px) and (max-width:960px) {
+	#changeFormPatient {
+		width: 40%;
+	}
+	#changeForm {
+		width: 40%;
+		top: -40px;
+		left: -30px;
+	}
+}
+
+@media ( min-width :768px) and (max-width:862px) {
+	#changeFormPatient {
+		width: 40%;
+	}
+	#changeForm {
+		width: 40%;
+		top: -40px;
+		left: -30px;
+	}
+}
+
+@media ( min-width :960px) and (max-width:1199px) {
+	#changeFormPatient {
+		width: 30%;
+	}
+	#changeForm {
+		top: -40px;
+		left: -25px;
+	}
+}
+
+@media ( min-width :1200px) and ( max-width : 1450px) {
+	#changeForm {
+		top: -80px;
+		left: 135px;
+	}
+	#changeFormPatient {
+		top: -40px;
+		left: -25px;
+	}
+}
+
+@media ( min-width : 768px) and (max-width:1199px) {
+	#container-fluid .col-md-4 {
+		width: 50%;
+	}
+	input[type=text], input[type=password] {
+		width: 70%;
+		font-size: 18px;
+	}
+}
+
+@media ( width :767) {
+	#changeForm {
+		top: -37px;
+	}
+}
+
+@media ( max-width :767px) {
+	#container-fluid .col-md-4 {
+		padding: 20px;
+	}
+	input[type=text], input[type=password] {
+		font-size: 16px;
+	}
+	input[type=submit] {
+		font-size: 16px;
+	}
+	#changeForm {
+		top: -94px;
+		left: 120px;
+	}
+	#changeFormPatient {
+		top: -56.5px;
+		left: -12px;
+	}
+}
+
+@media ( min-width : 250px) and (max-width:322px) {
+	#changeForm {
+		top: -136px;
+		left: 85px;
+	}
+	#changeFormPatient {
+		top: -78px;
+		left: -12px;
+	}
+}

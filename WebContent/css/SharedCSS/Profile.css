@@ -1,0 +1,55 @@
+/*
+	This file contains the style for the Profile.jsp page.
+
+*/
+@charset "UTF-8";
+
+#container {
+	margin: 80px auto;
+	margin-bottom: 100px;
+}
+
+#row0 img {
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	margin: 0 auto;
+	margin-bottom: 5px;
+}
+
+.container #row0, .container #row1, .container #row2, .container #row3,
+	.container #row4, .container #row5, .container #row6, .container #row7,
+	.container #row8, .container #row9, .container #row10 {
+	margin: 0 auto;
+	width: 50%;
+	border-bottom: 2px solid black;
+}
+
+.container #row10 {
+	border-bottom: 0;
+	text-align: right;
+}
+
+.container #row10 a {
+	color: darkblue;
+}
+
+.container label {
+	margin-right: 5px;
+}
+
+@media ( max-width : 576px) {
+	.container #row0, .container #row1, .container #row2, .container #row3,
+		.container #row4, .container #row5, .container #row6, .container #row7,
+		.container #row8, .container #row9, .container #row10 {
+		width: 90%;
+	}
+}
+
+@media ( min-width :576px) and (max-width: 767px) {
+	.container #row0, .container #row1, .container #row2, .container #row3,
+		.container #row4, .container #row5, .container #row6, .container #row7,
+		.container #row8, .container #row9, .container #row10 {
+		width: 70%;
+	}
+}
