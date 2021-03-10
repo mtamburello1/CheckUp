@@ -1,0 +1,56 @@
+/*
+	This file contains the style for the ChangePwd.jsp page.
+
+*/
+@charset "UTF-8";
+
+#container {
+	margin: 50px auto 100px auto;
+}
+
+.col-lg-6.col-xs-12 {
+	background-color: rgba(0, 137, 137, 0.8);
+	color: white;
+	padding: 50px 20px;
+	margin: auto;
+	border-radius: 10px;
+}
+
+#errorMessage, #formatErrorMessage {
+	margin: 0;
+}
+
+label {
+	display: block !important;
+}
+
+form {
+	margin: 0 auto;
+}
+
+form #buttonConfirm {
+	display: block;
+	margin-top: 20px;
+	background-color: white;
+	color: darkblue;
+	border: 2px solid darkblue;
+	font-weight: 500;
+}
+
+.row #userNotLogged {
+	width: 50%;
+	margin: 0 auto;
+	border-bottom: 2px solid black;
+}
+
+@media ( max-width :575px) {
+	.col-lg-6.col-xs-12 {
+		width: 90%;
+	}
+}
+
+@media ( max-width :300px) {
+	form input[type="password"] {
+		width: 100%;
+	}
+}

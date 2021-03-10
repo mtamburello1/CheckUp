@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource 
+		name="jdbc/CheckUpDb"
+		auth="Container"
+		maxActive="20"
+		maxIdle="10"
+		maxWait="10000"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		type="javax.sql.DataSource"
+		username="root"
+		password="martina"
+		url="jdbc:mysql://127.0.0.1:3306/CheckUpDb?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=CET"
+	/>
+</Context>

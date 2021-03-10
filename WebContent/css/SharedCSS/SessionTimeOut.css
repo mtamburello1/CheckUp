@@ -1,0 +1,33 @@
+/*
+	This file contains the style for the SessionTimeOut.jsp page.
+
+*/
+@charset "UTF-8";
+
+.containerImg {
+	width: 30%;
+	margin: 0 auto;
+}
+
+.containerImg img {
+	width: 90%;
+	height: 90%;
+}
+
+#container h2 {
+	width: max-content;
+	margin: 0 auto;
+}
+
+#container h5 {
+	width: max-content;
+	margin: 0 auto;
+}
+
+#container a {
+	color: darkblue;
+}
+
+#container {
+	margin: 50px auto;
+}
