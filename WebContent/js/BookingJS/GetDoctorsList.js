@@ -19,6 +19,11 @@ $("#type").on('click',function(){
 	date.children[0].setAttribute("hidden", "");
 	
 	$.post("BookingDoctor", $(this).serialize(), function(response){
+		if(response.length == 0){
+			doctors.add(new Option("Attualmente non ci sono medici disponibili."));
+			hours.children[0].setAttribute("disabled", "");
+			hours.children[0].setAttribute("hidden", "");
+		}
 		$.each(response, function(index, item) { 
 			doctors.add(new Option(item.name));
 			$("#fiscal_code").val(item.fiscal_code);
